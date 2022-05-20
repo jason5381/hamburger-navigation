@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat&family=Poppins&display=swap');
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+header{
+    background-color: rgb(151, 138, 163);
+}
+.container{
+    width:90%;
+    margin:0px auto;
+}
+header .container .logo-branding{
+    font-size: 2rem;
+    font-weight: 800;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+    /* flex-wrap: wrap; */
+}
+.navbar .nav-menu{
+    display: flex;
+    text-align: center;
+}
+.navbar .nav-menu .nav-item{
+    margin:0px 25px;
+}
+.navbar .nav-menu .nav-item .nav-link{
+    /* margin:0px 40px; */
+    color:white;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+header .container .Hamburger{
+    display: none;
+}
+header .container .Hamburger .bar{
+    width:25px;
+    height: 3px;
+    display: block;
+    background-color: white;
+    margin: 6px auto;
+    transition: all 0.4s ease-in-out;
+}
+
+@media(max-width:768px){
+    header .container .Hamburger{
+        display: block;
+        cursor: pointer;
+    }
+   
+    .Hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .Hamburger.active .bar:nth-child(1){
+        transform: translateY(10px) rotate(45deg);
+    }
+    .Hamburger.active .bar:nth-child(3){
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: absolute;
+        flex-direction: column;
+        left: -100%;
+        top:86px;
+        width: 100%;
+        background-color: darkorchid;
+        transition: 0.5s ease-in-out;
+    }
+    .nav-item{
+        margin:10px 0px;
+        padding: 5px;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
+@media (max-width:400px){
+   
+    .nav-menu{
+        
+        background-color: rgb(86, 54, 54);
+    }
+}
